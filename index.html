@@ -1,63 +1,35 @@
-<!DOCTYPE html>
+git <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Inicio - Entrenamiento</title>
-
     <link rel="stylesheet" href="style_inicio.css">
-
 </head>
-
 <body>
-
     <!-- fondo matrix -->
     <canvas id="matrix"></canvas>
-
     <div class="container">
-
         <div class="view">
-
             <h1>Bienvenido al Entrenamiento</h1>
-
             <div class="welcome-content">
-
                 <a href="niveles.html">
-
                     <button id="start-btn" onclick="iniciar()">
-
                         <div id="progress"></div>
-
                         <span id="text">Comenzar Entrenamiento</span>
-
                     </button>
-
                 </a>
-
             </div>
-
             <p class="mensaje">Haz clic en el botón para continuar</p>
-
         </div>
-
     </div>
-
     <script>
-
         function iniciar() {
-
             let progress = document.getElementById("progress");
             let text = document.getElementById("text");
-
             let ancho = 0;
-
             let intervalo = setInterval(function () {
-
                 if (ancho >= 100) {
-
                     clearInterval(intervalo);
 
                     text.innerHTML = "Entrenamiento Iniciado";
@@ -71,16 +43,10 @@
                     text.innerHTML = "Cargando " + ancho + "%";
 
                 }
-
             }, 30);
-
         }
-
     </script>
-
-
     <script>
-
         const canvas = document.getElementById("matrix");
         const ctx = canvas.getContext("2d");
 
@@ -105,26 +71,17 @@
 
             ctx.fillStyle = "#00f7ff";
             ctx.font = fontSize + "px monospace";
-
             for (let i = 0; i < drops.length; i++) {
 
                 const text = letrasArray[Math.floor(Math.random() * letrasArray.length)];
 
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
                 if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
                     drops[i] = 0;
-
                 drops[i]++;
-
             }
-
         }
-
         setInterval(draw, 33);
-
     </script>
-
 </body>
-
 </html>
