@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fondo de la página */
+
+body {
+
+    height: 100vh;
+
+    background-image: url("https://cdn.pixabay.com/photo/2023/05/26/21/48/ai-generated-8020369_1280.jpg");
+    /* tu imagen */
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+/* Capa oscura para que el texto se vea */
+
+body::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    z-index: 0;
+
+}
+
+/* Contenedor */
+
+.view {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+/* Caja central */
+
+.contenedor-niveles {
+
+    background: rgba(10, 15, 25, 0.85);
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+
+}
+
+/* Título */
+
+h2 {
+    color: #00eaff;
+    margin-bottom: 30px;
+}
+
+/* Botones */
+
+.niveles {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-nivel {
+    padding: 15px;
+    font-size: 16px;
+    background: #0f172a;
+    color: #00eaff;
+    border: 1px solid #00eaff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-nivel:hover {
+    background: #00eaff;
+    color: #000;
+}
+/* Botones bloqueados */
+.locked {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+/* Volver */
+.volver {
+    margin-top: 30px;
+}
+
+.volver a {
+    color: #cbd5f5;
+    text-decoration: none;
+}

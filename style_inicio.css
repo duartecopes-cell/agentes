@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* fondo con robot */
+body {
+    height: 100vh;
+
+    background-image: url("https://img.freepik.com/fotos-premium/ilustracao-de-uma-ia-generativa-de-robo-humanoide_941600-12974.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+
+    color: white;
+
+}
+
+/* capa oscura encima del robot */
+
+body::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(2, 6, 23, 0.65);
+
+    z-index: 1;
+
+}
+
+/* canvas matrix */
+
+canvas {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 2;
+
+}
+
+/* contenedor principal */
+
+.container {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    z-index: 3;
+
+}
+
+/* titulo */
+
+h1 {
+
+    font-size: 60px;
+
+    color: #00f7ff;
+
+    text-shadow: 0 0 20px #00f7ff;
+
+    margin-bottom: 40px;
+
+}
+
+/* boton */
+
+#start-btn {
+
+    position: relative;
+
+    width: 260px;
+
+    height: 60px;
+
+    background: #020617;
+
+    border: 2px solid #00f7ff;
+
+    color: #00f7ff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+
+}
+
+/* hover */
+
+#start-btn:hover {
+
+    box-shadow: 0 0 20px #00f7ff;
+
+}
+
+/* barra progreso */
+
+#progress {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+
+    width: 0%;
+
+    background: #00f7ff;
+
+    z-index: 1;
+
+    transition: 0.1s;
+
+}
+
+/* texto */
+
+#text {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+/* mensaje */
+
+.mensaje {
+
+    margin-top: 20px;
+
+    color: #94a3b8;
+
+}

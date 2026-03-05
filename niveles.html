@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selección de Niveles</title>
+
+<link rel="stylesheet" href="style_niveles.css">
+</head>
+
+<body>
+
+<div class="view">
+    
+    <div class="contenedor-niveles">
+
+        <h2>Selecciona el Nivel de Dificultad</h2>
+
+        <div class="niveles">
+
+            <button class="btn-nivel" onclick="seleccionarNivelBasico()">
+                Nivel Básico
+            </button>
+
+            <button class="btn-nivel locked" disabled>
+                Nivel Avanzado (Bloqueado)
+            </button>
+
+            <button class="btn-nivel locked" disabled>
+                Nivel Experto (Bloqueado)
+            </button>
+
+        </div>
+
+        <p class="volver">
+            <a href="index.html">← Volver al Inicio</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="bancoDeHistorias.js"></script>
+
+<script>
+
+function seleccionarNivelBasico() {
+
+    if (typeof bancoDeHistorias !== 'undefined') {
+
+        const ids = Object.keys(bancoDeHistorias);
+
+        const idAzar = ids[Math.floor(Math.random() * ids.length)];
+
+        localStorage.setItem("casoSeleccionado", idAzar);
+
+        window.location.href = "contextos.html";
+
+    } else {
+
+        alert("Error: No se encontró bancoDeHistorias.js");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
